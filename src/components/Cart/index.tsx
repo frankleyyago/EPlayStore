@@ -40,20 +40,18 @@ const Cart = () => {
       <Overlay onClick={closeCart} />
       <Sidebar>
         <ul>
-          <li>
-            {items.map((item) => (
-              <CartItem key={item.id}>
-                <img src={item.media.thumbnail} alt={item.name} />
-                <div>
-                  <h3>{item.name}</h3>
-                  <Tag>{item.details.category}</Tag>
-                  <Tag>{item.details.system}</Tag>
-                  <span>{formataPreco(item.prices.current)}</span>
-                </div>
-                <button onClick={() => removeItem(item.id)} type="button" />
-              </CartItem>
-            ))}
-          </li>
+          {items.map((item) => (
+            <CartItem key={item.id}>
+              <img src={item.media.thumbnail} alt={item.name} />
+              <div>
+                <h3>{item.name}</h3>
+                <Tag>{item.details.category}</Tag>
+                <Tag>{item.details.system}</Tag>
+                <span>{formataPreco(item.prices.current)}</span>
+              </div>
+              <button onClick={() => removeItem(item.id)} type="button" />
+            </CartItem>
+          ))}
         </ul>
         <Quantity>{items.length} Jogo(s) no carrinho</Quantity>
         <Prices>
