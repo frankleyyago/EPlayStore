@@ -1,7 +1,3 @@
-import { useEffect, useState } from 'react'
-
-import { Game } from '../Home'
-
 import ProductList from '../../components/ProductsList'
 
 import {
